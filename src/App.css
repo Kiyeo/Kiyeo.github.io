@@ -1,38 +1,111 @@
-.App {
-  text-align: center;
+body {
+  font-family: futura-pt;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.6em;
+  font-size: 18px;
+  text-decoration: none;
+  letter-spacing: 1px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  font-family: futura-pt;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.6em;
+  text-decoration: none;
+  letter-spacing: 1px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h3 {
+  font-family: futura-pt;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.6em;
+  font-size: 26px;
+  text-decoration: none;
+  letter-spacing: 1px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#root {
+  max-width: 1200px;
+  margin: 10px auto;
+  padding: 75px;
+}
+
+header {
+  margin-bottom: 40px;
+  height: 220px;
+}
+
+#logo {
+  float: left;
+}
+
+.logo {
+  /* line-height: 0; */
+  margin: 0;
+  display: inline-block;
+  height: 220px;
+}
+
+#top-nav {
+  float: right;
+  height: 220px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+nav {
+  /*border-bottom: 4px solid black;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  width: 100%;*/
+  background: white;
+  font-family: futura-pt;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.6em;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 1px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  padding: 8px 8px;
+}
+
+nav a:hover {
+  color: grey;
+}
+
+#page-body {
+  padding-top: 64px;
+}
+
+.article-list-item {
+  text-decoration: none;
+  color: black;
+}
+
+.article-list-item p {
+  padding-bottom: 32px;
+  border-bottom: 2px solid black;
 }
