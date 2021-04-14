@@ -5,22 +5,23 @@ import AboutPages from "./pages/AboutPages";
 import ArticleListPage from "./pages/ArticleListPage";
 import ArticlePage from "./pages/ArticlePage";
 import NotFoundPage from "./pages/NotFoundPage";
-import Logo from "./Logo";
-import NavBar from "./NavBar";
+import Logo from "./components/Logo.jsx";
+import NavBar from "./components/NavBar.jsx";
+import Menu from "./components/Menu.jsx";
 import "./App.css";
 
 function App() {
   return (
     <Router>
-      <header id="header">
-        <div id="logo">
+      <header className="header">
+        <div className="logo-container">
           <Logo />
+          <span className="personal-title">Software Developer</span>
         </div>
-        <div id="top-nav">
-          <NavBar />
-        </div>
+        <Menu />
+        <NavBar />
       </header>
-      <div id="page-body">
+      <div className="page-body">
         <Switch>
           <Route path="/" component={HomePage} exact />
           <Route path="/about" component={AboutPages} />

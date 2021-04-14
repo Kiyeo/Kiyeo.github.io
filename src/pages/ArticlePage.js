@@ -1,5 +1,5 @@
 import React from "react";
-import ArticlesList from "../components/ArticlesList";
+import ArticlesList from "../components/ArticlesList.jsx";
 import NotFoundPage from "./NotFoundPage";
 import articleContent from "./article-content";
 
