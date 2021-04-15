@@ -1,4 +1,5 @@
 import "./App.css";
+import "./index.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import AboutPages from "./pages/AboutPages";
@@ -8,7 +9,6 @@ import NotFoundPage from "./pages/NotFoundPage";
 import Logo from "./components/Logo.jsx";
 import NavBar from "./components/NavBar.jsx";
 import Menu from "./components/Menu.jsx";
-import "./App.css";
 
 function App() {
   return (

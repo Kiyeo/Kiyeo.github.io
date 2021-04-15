@@ -24,6 +24,7 @@ const articles = [
             consequat quam. Vivamus accumsan dui in facilisis aliquet.`,
     ],
   },
+
   {
     name: "learn-node",
     title: "How to Build a Node Server in 10 Minutes",
@@ -49,6 +50,7 @@ const articles = [
             consequat quam. Vivamus accumsan dui in facilisis aliquet.`,
     ],
   },
+
   {
     name: "my-thoughts-on-resumes",
     title: "My Thoughts on Resumes",

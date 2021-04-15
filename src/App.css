@@ -4,7 +4,7 @@
   max-width: 85rem;
   margin: auto;
   padding: 2rem;
-  --hover-colour: grey;
+  --hover-font-weight: 500;
 }
 
 /* Sets the border size to be included in element dimensions for all elements*/
@@ -15,11 +15,10 @@
 }
 
 body {
-  font-family: futura-pt;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 1.6em;
-  font-size: 18px;
+  font-family: "montserrat";
+  font-weight: normal;
+  line-height: 1.7em;
+  font-size: 1.2em;
   text-decoration: none;
   letter-spacing: 1px;
 }
@@ -27,16 +26,15 @@ body {
 h1,
 h2,
 h3 {
-  font-family: futura-pt;
+  font-family: "quicksand";
   font-weight: 400;
-  font-style: normal;
   text-decoration: none;
-  line-height: 1em;
+  line-height: 1.6em;
   margin: 1.5rem 0;
 }
 
 h3 {
-  font-size: 26px;
+  font-size: 1.6rem;
 }
 
 header {
@@ -44,6 +42,10 @@ header {
   grid-gap: 2rem;
   justify-items: center;
   align-items: center;
+}
+
+.header {
+  font-family: "quicksand";
 }
 
 .logo-container {
@@ -58,8 +60,7 @@ header {
 }
 
 .personal-title {
-  font-weight: 600;
-  font-style: italic;
+  font-weight: 500;
   color: rgba(0, 0, 0, 0.6);
 }
 
@@ -88,7 +89,7 @@ header {
 }
 
 .nav-toggle-label:hover {
-  color: var(--hover-colour);
+  font-weight: var(--hover-font-weight);
 }
 
 /* nav bar divider */
@@ -168,7 +169,7 @@ nav a:focus {
 }
 
 nav a:hover {
-  color: var(--hover-colour);
+  font-weight: var(--hover-font-weight);
 }
 
 nav a:hover::before,
@@ -191,6 +192,7 @@ nav a.active::before {
 /* https://css-tricks.com/using-css-transitions-auto-dimensions/ */
 /* maybe in the future we can do this in pure CSS. able to use selectors outside of parent? */
 .page-body {
+  margin-top: 4rem;
   transition: transform 250ms ease-in-out;
 }
 
@@ -200,6 +202,15 @@ nav a.active::before {
 }
 
 .article-list-item {
+  transition: transform 250ms ease-in-out;
+}
+
+.article-list-item:hover {
+  transform: scale(1.05, 1.05);
+  transition: transform 250ms ease-in-out;
+}
+
+.article-list-item a {
   text-decoration: none;
   color: black;
 }
