@@ -1,6 +1,7 @@
 import "./App.css";
 import "./index.css";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Route, Switch, useLocation } from "react-router-dom";
+import { useTransition, animated } from "react-spring";
 import HomePage from "./pages/HomePage";
 import AboutPages from "./pages/AboutPages";
 import ArticleListPage from "./pages/ArticleListPage";
@@ -17,8 +18,16 @@ function App() {
     articlesList: "/articles-list",
     article: "/article/:name",
   };
+
+  const location = useLocation();
+  const transitions = useTransition(location, {
+    from: { opacity: 0, transform: "translate3d(-25%,0,0)" },
+    enter: { opacity: 1, transform: "translate3d(0%,0,0)" },
+    leave: { opacity: 0, transform: "translate3d(25%,0,0)" },
+  });
+
   return (
-    <Router>
+    <>
       <header className="header">
         <div className="logo-container">
           <Logo />
@@ -27,16 +36,18 @@ function App() {
         <Menu />
         <NavBar pages={pages} />
       </header>
-      <div className="page-body">
-        <Switch>
-          <Route path={pages.home} component={HomePage} exact />
-          <Route path={pages.about} component={AboutPages} />
-          <Route path={pages.articlesList} component={ArticleListPage} />
-          <Route path={pages.article} component={ArticlePage} />
-          <Route component={NotFoundPage} />
-        </Switch>
-      </div>
-    </Router>
+      {transitions((style, item) => (
+        <animated.div className="page-body" style={style}>
+          <Switch location={item}>
+            <Route path={pages.home} component={HomePage} exact />
+            <Route path={pages.about} component={AboutPages} />
+            <Route path={pages.articlesList} component={ArticleListPage} />
+            <Route path={pages.article} component={ArticlePage} />
+            <Route component={NotFoundPage} />
+          </Switch>
+        </animated.div>
+      ))}
+    </>
   );
 }
 

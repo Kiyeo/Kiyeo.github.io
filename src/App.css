@@ -189,28 +189,8 @@ nav a.active::before {
   transition: opacity 250ms ease-in-out 250ms;
 }
 
-.home {
-  opacity: 0;
-  transform: translateX(-2rem);
-}
-
-/* https://css-tricks.com/using-css-transitions-auto-dimensions/ */
-/* maybe in the future we can do this in pure CSS. able to use selectors outside of parent? */
 .page-body {
-  margin-top: 4rem;
-  transition: transform 250ms ease-in-out;
-}
-
-.animate {
-  opacity: 1;
-  transform: translateX(0);
-  transition: all 250ms ease-in;
-  transition-property: transform, opacity;
-}
-
-.body-transition {
-  transform: translateY(2rem);
-  transition: transform 250ms ease-in-out;
+  position: absolute;
 }
 
 .article-list-item {
@@ -218,7 +198,7 @@ nav a.active::before {
 }
 
 .article-list-item:hover {
-  transform: scale(1.05, 1.05);
+  transform: scale(1.025, 1.025);
   transition: transform 250ms ease-in-out;
 }
 
