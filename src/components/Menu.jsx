@@ -12,7 +12,7 @@ const Menu = () => {
       <input type="checkbox" id="nav-toggle" className="nav-toggle"></input>
       <label
         htmlFor="nav-toggle"
-        className={isToggle ? "nav-toggle-label active" : "nav-toggle-label"}
+        className={`nav-toggle-label ${isToggle ? "active" : ""}`}
         onClick={() => handleIsToggle()}
       >
         <span>Menu</span>

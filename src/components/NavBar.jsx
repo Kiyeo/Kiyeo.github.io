@@ -1,37 +1,37 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
-const NavBar = () => {
+const NavBar = (props) => {
+  const { pages } = props;
   const { pathToRegexp } = require("path-to-regexp");
   const location = useLocation();
   const currentURL = location.pathname.split("?")[0];
 
   /* used to keep Articles nav focus active when browsing different articles */
-  const articleRegex = pathToRegexp("/article/:name");
+  const articleRegex = pathToRegexp(pages.article);
   const currentArticle = articleRegex.exec(currentURL);
 
   return (
     <nav className="top-nav">
       <ul>
         <li>
-          <Link to="/" className={currentURL === "/" ? "active" : ""}>
+          <NavLink exact to={pages.home} activeClassName="active">
             Projects
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link
-            to="/articles-list"
-            className={
-              currentURL === "/articles-list" || currentArticle ? "active" : ""
-            }
+          <NavLink
+            to={pages.articlesList}
+            isActive={() => currentURL === pages.articlesList || currentArticle}
+            activeClassName="active"
           >
             Articles
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/about" className={currentURL === "/about" ? "active" : ""}>
+          <NavLink to={pages.about} activeClassName="active">
             About
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </nav>

@@ -11,6 +11,12 @@ import NavBar from "./components/NavBar.jsx";
 import Menu from "./components/Menu.jsx";
 
 function App() {
+  const pages = {
+    home: "/",
+    about: "/about",
+    articlesList: "/articles-list",
+    article: "/article/:name",
+  };
   return (
     <Router>
       <header className="header">
@@ -19,14 +25,14 @@ function App() {
           <span className="personal-title">Software Developer</span>
         </div>
         <Menu />
-        <NavBar />
+        <NavBar pages={pages} />
       </header>
       <div className="page-body">
         <Switch>
-          <Route path="/" component={HomePage} exact />
-          <Route path="/about" component={AboutPages} />
-          <Route path="/articles-list" component={ArticleListPage} />
-          <Route path="/article/:name" component={ArticlePage} />
+          <Route path={pages.home} component={HomePage} exact />
+          <Route path={pages.about} component={AboutPages} />
+          <Route path={pages.articlesList} component={ArticleListPage} />
+          <Route path={pages.article} component={ArticlePage} />
           <Route component={NotFoundPage} />
         </Switch>
       </div>
