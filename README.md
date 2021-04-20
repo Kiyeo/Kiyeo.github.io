@@ -1,7 +1,5 @@
 # TODO
 
-Footer icons
-
 Navigation scroll style
 
 Dark Mode
