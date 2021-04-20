@@ -12,7 +12,7 @@ const NavBar = (props) => {
   const currentArticle = articleRegex.exec(currentURL);
 
   return (
-    <nav className="top-nav">
+    <nav className="nav--nav-bar">
       <ul>
         <li>
           <NavLink exact to={pages.home} activeClassName="active">

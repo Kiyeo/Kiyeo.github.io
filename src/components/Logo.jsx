@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/calcifer.jpg";
+import logo from "../assets/icons/calcifer.jpg";
 
 const Logo = () => (
   <Link to="/">

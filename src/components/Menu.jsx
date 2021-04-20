@@ -9,10 +9,10 @@ const Menu = () => {
 
   return (
     <>
-      <input type="checkbox" id="nav-toggle" className="nav-toggle"></input>
+      <input type="checkbox" id="menu" className="menu"></input>
       <label
-        htmlFor="nav-toggle"
-        className={`nav-toggle-label ${isToggle ? "active" : ""}`}
+        htmlFor="menu"
+        className={`menu__label ${isToggle ? "active" : ""}`}
         onClick={() => handleIsToggle()}
       >
         <span>Menu</span>
