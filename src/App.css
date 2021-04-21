@@ -14,11 +14,8 @@
   box-sizing: border-box;
 }
 
-#root {
-  height: 100vh;
-}
-
 :root {
+  height: 100vh;
   /*max-width: 85rem;
   /*margin: auto;
   /*padding: 2rem;*/
@@ -29,6 +26,7 @@
   --fw-hover: 500;
 
   --clr-primary: hsl(210, 45%, 44%);
+  /* --clr-primary: forestgreen; */
   --clr-neutral: hsl(36, 100%, 96%);
 
   --clr-font-primary: white;
@@ -118,7 +116,7 @@ header {
   text-align: center;
 }
 
-/* */
+/* wait for future support */
 /*.menu,
 .menu__label {
   content-visibility: auto;
@@ -288,10 +286,25 @@ nav li {
 /* makes sure anchor matches width and height of svg */
 .nav--footer a {
   display: inline-flex;
+  outline-style: none;
 }
 
-.nav--footer a svg {
+.nav--footer a:focus {
+  border-radius: 5px;
+  box-shadow: 0 0 0 4px var(--clr-primary), 0 0 0 6px white;
+}
+
+.nav--footer .nav--footer__circle:focus {
+  border-radius: 100%;
+}
+
+.nav--footer svg {
   fill: white;
+}
+
+.nav--footer svg:hover,
+.nav--footer a:focus svg {
+  fill: hsl(0, 0%, 85%);
 }
 
 .fade-enter {
@@ -413,7 +426,7 @@ nav li {
     bottom: 0;
     right: 0;
     left: 0;
-    background-color: var(--clr-neutral);
+    background-color: inherit;
   }
 
   .main::before {
