@@ -52,7 +52,7 @@ function App() {
         <header className="header">
           <div className="logo-container">
             <Logo />
-            <span className="personal-title">Software Developer</span>
+            <span className="logo-title">Software Developer</span>
           </div>
           <Menu />
           <NavBar pages={pages} />

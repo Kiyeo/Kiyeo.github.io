@@ -10,6 +10,7 @@ const NavBar = (props) => {
           <a
             className="nav--footer__circle"
             href={urlHandles.github}
+            aria-label="Github link"
             target="_blank"
             rel="noreferrer"
           >
@@ -24,7 +25,12 @@ const NavBar = (props) => {
           </a>
         </li>
         <li>
-          <a href={urlHandles.linkedin} target="_blank" rel="noreferrer">
+          <a
+            href={urlHandles.linkedin}
+            aria-label="Linkedin link"
+            target="_blank"
+            rel="noreferrer"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -36,7 +42,12 @@ const NavBar = (props) => {
           </a>
         </li>
         <li>
-          <a href={urlHandles.twitter} target="_blank" rel="noreferrer">
+          <a
+            href={urlHandles.twitter}
+            aria-label="Twitter link"
+            target="_blank"
+            rel="noreferrer"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
