@@ -1,8 +1,8 @@
-import React from "react";
+interface Props {
+  urlHandles: UrlHandles;
+}
 
-const NavBar = (props) => {
-  const { urlHandles } = props;
-
+const NavBar: React.FC<Props> = ({ urlHandles }) => {
   return (
     <nav className="nav--footer">
       <ul>
