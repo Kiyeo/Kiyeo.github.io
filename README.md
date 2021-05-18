@@ -1,6 +1,6 @@
 # TODO
 
-Navigation scroll style
+Typescript
 
 Dark Mode
 
