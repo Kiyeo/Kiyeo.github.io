@@ -14,9 +14,13 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
 :root {
   height: 100vh;
-  --max-width: 75rem;
+  --max-width: 80ch;
 
   /* h1, h2, h3, p top margins */
   --text-top-margin: 1em;
@@ -175,7 +179,6 @@ nav li {
 }
 
 .nav--nav-bar a {
-  text-decoration: none;
   display: block;
   color: var(--clr-light-100);
   margin: 0.75rem;
@@ -320,6 +323,51 @@ nav li {
   transition: all 250ms ease-in;
 }
 
+.home-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  background-color: white;
+  border-radius: 5%;
+}
+
+.card__h2 {
+  padding: 0.5em 0.5em;
+}
+
+.card__img {
+  width: 200px;
+  height: 200px;
+}
+
+.about,
+.about__heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.about > * + *,
+.about__heading > * + *,
+.about__content > * + * {
+  margin-top: 1rem;
+}
+.about__display-picture {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+.about__h1 {
+  max-width: 10ch;
+  text-align: center;
+}
+
 /* galaxy fold phone */
 @media screen and (max-width: 20rem) {
   header .nav--nav-bar ul {
@@ -431,6 +479,23 @@ nav li {
     grid-row: 2 / 3;
   }
 
+  .card__img {
+    width: 400px;
+    height: 400px;
+  }
+
+  .about > * + * {
+    margin-top: 2rem;
+  }
+
+  .about__heading {
+    flex-direction: row;
+  }
+
+  .about__display-picture {
+    width: 400px;
+    height: 400px;
+  }
   .footer {
     padding: calc(var(--padding-primary) * 2);
   }

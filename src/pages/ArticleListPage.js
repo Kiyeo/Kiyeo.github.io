@@ -1,4 +1,3 @@
-import React from "react";
 import ArticlesList from "../components/ArticlesList.jsx";
 import articleContent from "./article-content";
 
