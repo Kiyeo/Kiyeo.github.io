@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.35b4876e.chunk.css",
-    "main.js": "/static/js/main.9ae75f00.chunk.js",
-    "main.js.map": "/static/js/main.9ae75f00.chunk.js.map",
+    "main.js": "/static/js/main.fe7a6132.chunk.js",
+    "main.js.map": "/static/js/main.fe7a6132.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.cab4713d.js",
     "runtime-main.js.map": "/static/js/runtime-main.cab4713d.js.map",
-    "static/js/2.09f3fcbb.chunk.js": "/static/js/2.09f3fcbb.chunk.js",
-    "static/js/2.09f3fcbb.chunk.js.map": "/static/js/2.09f3fcbb.chunk.js.map",
+    "static/js/2.49834e0e.chunk.js": "/static/js/2.49834e0e.chunk.js",
+    "static/js/2.49834e0e.chunk.js.map": "/static/js/2.49834e0e.chunk.js.map",
     "index.html": "/index.html",
     "static/css/main.35b4876e.chunk.css.map": "/static/css/main.35b4876e.chunk.css.map",
-    "static/js/2.09f3fcbb.chunk.js.LICENSE.txt": "/static/js/2.09f3fcbb.chunk.js.LICENSE.txt",
+    "static/js/2.49834e0e.chunk.js.LICENSE.txt": "/static/js/2.49834e0e.chunk.js.LICENSE.txt",
     "static/media/index.css": "/static/media/Quicksand-VariableFont_wght.7dd2a729.ttf",
     "static/media/calcifer.75472751.jpg": "/static/media/calcifer.75472751.jpg",
     "static/media/me.e2fbdfbb.jpg": "/static/media/me.e2fbdfbb.jpg",
@@ -17,8 +17,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.cab4713d.js",
-    "static/js/2.09f3fcbb.chunk.js",
+    "static/js/2.49834e0e.chunk.js",
     "static/css/main.35b4876e.chunk.css",
-    "static/js/main.9ae75f00.chunk.js"
+    "static/js/main.fe7a6132.chunk.js"
   ]
 }
