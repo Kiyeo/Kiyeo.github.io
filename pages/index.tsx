@@ -1,30 +1,27 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import styled from "styled-components";
-import BasicLayout from "../layout/BasicLayout";
+import { ThemeProvider } from "styled-components";
+import BasicLayout from "../components/layout/BasicLayout";
+import IntroPage from "../components/Introduction/IntroPage";
 
-const StyledCenter = styled.div`
-  font-family: "JetBrains Mono";
-  min-height: 100vh;
-  display: grid;
-  place-content: center;
-`;
+const theme = {
+  backgroundColor: "#FFFDD0",
+};
 
 const Home: NextPage = () => {
   return (
-    <BasicLayout>
-      <Head>
-        <title>Leo Keo</title>
-        <meta name="description" content="Leo's Website" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <ThemeProvider theme={theme}>
+      <IntroPage />
+      <BasicLayout>
+        <Head>
+          <title>Leo Keo</title>
+          <meta name="description" content="Leo's Website" />
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
 
-      <StyledCenter>
-        <main>
-          <header>Leo Keo</header>
-        </main>
-      </StyledCenter>
-    </BasicLayout>
+        <main></main>
+      </BasicLayout>
+    </ThemeProvider>
   );
 };
 

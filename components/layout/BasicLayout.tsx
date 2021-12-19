@@ -21,7 +21,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const BasicLayout = ({ children }: { children: any }) => {
+const BasicLayout = (props: any) => {
+  const { children } = props;
   return (
     <>
       <GlobalStyle />
