@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import TypingAnimation from "./TypingAnimation";
-import { useState, useEffect } from "react";
 
 const IntroStyle = styled.div`
   font-family: "JetBrains Mono";
@@ -28,15 +27,12 @@ const IntroStyle = styled.div`
 
 const IntroOverlay = () => {
   const intro = ["Hello!"];
-  const [duration, setDuration] = useState(0);
-
-  useEffect(() => {}, [duration]);
 
   return (
     <>
       <IntroStyle>
         {intro.map((e) => {
-          setDuration(e.length / 8);
+          const duration = e.length / 8;
           return (
             <TypingAnimation
               typingDuration={duration}
