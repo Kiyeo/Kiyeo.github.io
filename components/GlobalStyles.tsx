@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
+import { ThemeType } from "../pages";
 
-export const GlobalStyle = createGlobalStyle`
+export default createGlobalStyle<{ theme: ThemeType }>`
   *,
   *::before,
   *::after {
@@ -13,6 +14,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+      background-color: ${(p) => p.theme.backgroundColor}
   }
 
   a {
@@ -20,15 +22,3 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: none;
   }
 `;
-
-const BasicLayout = (props: any) => {
-  const { children } = props;
-  return (
-    <>
-      <GlobalStyle />
-      {children}
-    </>
-  );
-};
-
-export default BasicLayout;
