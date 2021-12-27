@@ -1,7 +1,11 @@
 import styled from "styled-components";
 import TypingAnimation from "./TypingAnimation";
 
-const IntroStyle = styled.div`
+interface Props {
+  duration: number;
+}
+
+const IntroStyle = styled.div<Props>`
   font-family: "JetBrains Mono";
   opacity: 1;
   min-height: 100vh;
@@ -16,7 +20,7 @@ const IntroStyle = styled.div`
   font-size: clamp(1rem, 2vw + 1rem, 4rem);
   background-color: ${(p) => p.theme.backgroundColor};
   z-index: 2;
-  animation: fadeOut;
+  animation: fadeOut 1s ${(p) => p.duration * 4}s forwards;
 
   @keyframes fadeOut {
     to {
@@ -27,18 +31,14 @@ const IntroStyle = styled.div`
 
 const IntroOverlay = () => {
   const intro = ["Hello!"];
-
+  let duration = intro[0].length / 8;
   return (
     <>
-      <IntroStyle>
+      <IntroStyle duration={duration}>
         {intro.map((e) => {
-          const duration = e.length / 8;
+          duration = e.length / 8;
           return (
-            <TypingAnimation
-              typingDuration={duration}
-              display={true}
-              stringLength={e.length}
-            >
+            <TypingAnimation typingDuration={duration} stringLength={e.length}>
               {e}
             </TypingAnimation>
           );

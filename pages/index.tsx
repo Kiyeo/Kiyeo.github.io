@@ -21,7 +21,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>hello</main>
+      <main>testing</main>
     </ThemeProvider>
   );
 };
