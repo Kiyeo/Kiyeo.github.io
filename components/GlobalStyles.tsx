@@ -12,7 +12,7 @@ export default createGlobalStyle<{ theme: ThemeType }>`
 
   html,
   body {
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    font-family: quicksand, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
       background-color: ${(p) => p.theme.backgroundColor}
   }
