@@ -10,6 +10,7 @@ const IntroStyle = styled.section`
   font-size: clamp(1rem, 2vw + 1rem, 4rem);
   background-color: ${(p) => p.theme.backgroundColor};
   color: ${(p) => p.theme.color};
+  transition: background-color 1s ease-in, color 1s ease-in;
 `;
 
 const IntroSection = () => {

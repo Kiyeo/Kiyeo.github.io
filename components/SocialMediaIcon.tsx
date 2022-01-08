@@ -18,6 +18,7 @@ const SocialNav = styled.nav`
 
   & svg {
     fill: ${(p) => p.theme.color};
+    transition: fill 1s ease-in;
     width: clamp(12px, 12px + 2vw, 32px);
   }
 
