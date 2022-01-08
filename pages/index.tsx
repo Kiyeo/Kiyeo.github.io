@@ -11,13 +11,17 @@ import Theme from "../theme";
 
 const Home: NextPage = () => {
   const lightTheme: Theme = {
-    backgroundColor: "white",
-    color: "black",
+    backgroundColor: "hsl(0, 0%, 95%)",
+    color: "#121212",
+    accent: "#f8bf54f8",
+    hoverAccent: "hsl(0, 0%, 85%)",
   };
 
   const darkTheme: Theme = {
-    backgroundColor: "black",
+    backgroundColor: "#121212",
     color: "white",
+    accent: "orange",
+    hoverAccent: "hsl(0, 0%, 45%)",
   };
 
   const [theme, setTheme] = useState(darkTheme);

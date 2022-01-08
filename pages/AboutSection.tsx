@@ -4,9 +4,6 @@ import Header from "../components/Header";
 const AboutStyle = styled.section`
   min-height: 100vh;
   padding: 5vh 10vw 0 10vw;
-  background-color: ${(p) => p.theme.backgroundColor};
-  color: ${(p) => p.theme.color};
-  transition: background-color 1s ease-in, color 1s ease-in;
 `;
 
 const AboutSection: React.FC = () => {

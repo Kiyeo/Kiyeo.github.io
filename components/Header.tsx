@@ -16,7 +16,7 @@ const HeaderStyle = styled.h1`
     bottom: 2.5%;
     left: 0;
     width: 100%;
-    background-color: orange;
+    background-color: ${(p) => p.theme.accent};
   }
 `;
 

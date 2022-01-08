@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
-import { ThemeType } from "../pages";
+import Theme from "../theme";
 
-export default createGlobalStyle<{ theme: ThemeType }>`
+export default createGlobalStyle<{ theme: Theme }>`
   *,
   *::before,
   *::after {
@@ -14,7 +14,9 @@ export default createGlobalStyle<{ theme: ThemeType }>`
   body {
     font-family: quicksand, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-      background-color: ${(p) => p.theme.backgroundColor}
+      background-color: ${(p) => p.theme.backgroundColor};
+      color: ${(p) => p.theme.color};
+      transition: background-color 1s ease-in, color 1s ease-in;
   }
 
   a {

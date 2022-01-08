@@ -24,7 +24,8 @@ const SocialNav = styled.nav`
 
   & svg:hover,
   & a:focus svg {
-    fill: hsl(0, 0%, 85%);
+    fill: ${(p) => p.theme.hoverAccent};
+    transition: none;
   }
 `;
 

@@ -40,6 +40,7 @@ const ThemeToggleLabel = styled.label<Props>`
   padding: 5px;
   border-radius: 24px;
   cursor: pointer;
+  transition: background-color 1s ease-in;
 
   & .ball {
     position: absolute;
@@ -50,7 +51,7 @@ const ThemeToggleLabel = styled.label<Props>`
     left: 2px;
     width: 22px;
     height: 22px;
-    transition: transform 0.2s linear;
+    transition: transform 1s ease-in, background-color 1s ease-in;
   }
 `;
 

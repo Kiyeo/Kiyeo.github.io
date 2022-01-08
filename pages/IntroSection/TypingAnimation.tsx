@@ -80,7 +80,7 @@ export default styled.header<Props>`
       background-color: transparent;
     }
     50% {
-      background-color: orange;
+      background-color: ${(p) => p.theme.accent};
     }
   }
 
