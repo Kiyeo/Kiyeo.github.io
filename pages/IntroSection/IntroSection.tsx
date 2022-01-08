@@ -2,7 +2,6 @@ import styled from "styled-components";
 import TypingAnimation from "./TypingAnimation";
 
 const IntroStyle = styled.section`
-  font-family: "JetBrains Mono";
   min-height: 100vh;
   display: flex;
   place-content: center;

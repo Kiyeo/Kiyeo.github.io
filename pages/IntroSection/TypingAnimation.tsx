@@ -7,7 +7,7 @@ interface Props {
   isBackspace: boolean;
 }
 
-export default styled.header<Props>`
+export default styled.code<Props>`
   position: absolute;
   top: 50%; /* 3 */
   transform: translate(0, -50%);
