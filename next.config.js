@@ -12,6 +12,6 @@ module.exports = withFonts({
   },
   images: {
     path: env.PUBLIC_URL,
-    loader: "imgix",
+    loader: "custom",
   },
 });
