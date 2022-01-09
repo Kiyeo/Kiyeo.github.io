@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Header from "../components/Header";
 
 const AboutStyle = styled.section`
-  min-height: 100vh;
+  min-height: 100%;
   padding: 5% 10% 5% 10%;
 `;
 

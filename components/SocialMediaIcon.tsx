@@ -13,17 +13,17 @@ const SocialNav = styled.nav`
 
   & li {
     list-style: none;
+    margin: 0 1em 0 1em;
   }
 
   & a {
-    display: inline-flex;
     outline-style: none;
   }
 
   & svg {
     fill: ${(p) => p.theme.color};
     transition: fill 1s ease-in;
-    width: clamp(12px, 12px + 2vw, 32px);
+    width: clamp(24px, 24px + 2vw, 32px);
   }
 
   & svg:hover,
@@ -38,10 +38,13 @@ const SocialNav = styled.nav`
     bottom: unset;
     left: unset;
     transform: translate3d(0, -50%, 0);
-    font-size: clamp(1rem, 2vw + 1rem, 4rem);
 
     & ul {
-      columns: 0;
+      columns: unset;
+    }
+
+    & ul > * + * {
+      margin-top: 2em;
     }
   }
 `;
