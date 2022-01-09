@@ -1,4 +1,5 @@
 const withFonts = require("next-fonts");
+const { env } = require("process");
 
 module.exports = withFonts({
   enableSvg: true,
@@ -8,5 +9,9 @@ module.exports = withFonts({
   env: {
     PUBLIC_URL: "https://kiyeo.github.io/",
     assetPrefix: "./",
+  },
+  images: {
+    path: env.PUBLIC_URL,
+    loader: "imgix",
   },
 });
