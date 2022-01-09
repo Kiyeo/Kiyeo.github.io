@@ -1,7 +1,6 @@
 import Image from "next/image";
 import styled from "styled-components";
 import Header from "../components/Header";
-import me from "./../public/IMG_0186.jpg";
 
 const AboutStyle = styled.section`
   min-height: 100vh;
@@ -27,7 +26,14 @@ const AboutSection: React.FC = () => {
         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
         dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        <Image className="dp" priority src={me} alt={"Leo Keo"} />
+        <Image
+          src={"/assets/images/IMG_0186.jpg"}
+          priority
+          className="dp"
+          width={1125}
+          height={1341}
+          alt={"Leo Keo"}
+        />
       </ContentDiv>
     </AboutStyle>
   );
