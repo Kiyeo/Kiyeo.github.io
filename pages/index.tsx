@@ -27,26 +27,24 @@ const Home: NextPage = () => {
   const [theme, setTheme] = useState(darkTheme);
 
   return (
-    <>
-      <ThemeProvider theme={theme}>
-        <GlobalStyles />
-        <ThemeToggle
-          toggleTheme={(theme: Theme) => setTheme(theme)}
-          lightTheme={lightTheme}
-          darkTheme={darkTheme}
-        />
-        <SocialMediaIcon />
-        <Head>
-          <title>Leo Keo</title>
-          <meta name="description" content="Leo's Website" />
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-        <main>
-          <IntroSection />
-          <AboutSection />
-        </main>
-      </ThemeProvider>
-    </>
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
+      <ThemeToggle
+        toggleTheme={(theme: Theme) => setTheme(theme)}
+        lightTheme={lightTheme}
+        darkTheme={darkTheme}
+      />
+      <SocialMediaIcon />
+      <Head>
+        <title>Leo Keo</title>
+        <meta name="description" content="Leo's Website" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <main>
+        <IntroSection />
+        <AboutSection />
+      </main>
+    </ThemeProvider>
   );
 };
 

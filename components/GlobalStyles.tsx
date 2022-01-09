@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
-import quicksandttf from "../public/fonts/quicksand/quicksand-v24-latin-regular.woff2";
-import montserratwoff2 from "../public/fonts/montserrat/Montserrat-VF.woff2";
-import jetbrainmonowoff2 from "../public/fonts/jetbrainsmono/JetBrainsMono-Regular.woff2";
+import quicksandttf from "../public/assets/fonts/quicksand/quicksand-v24-latin-regular.woff2";
+import montserratwoff2 from "../public/assets/fonts/montserrat/Montserrat-VF.woff2";
+import jetbrainmonowoff2 from "../public/assets/fonts/jetbrainsmono/JetBrainsMono-Regular.woff2";
 import Theme from "../theme";
 
 export default createGlobalStyle<{ theme: Theme }>`
@@ -53,6 +53,11 @@ export default createGlobalStyle<{ theme: Theme }>`
     color: inherit;
     text-decoration: none;
   }
+
+img, picture {
+  max-width: 100%;
+}
+
 
   code {
     font-family: JetBrain Mono;
