@@ -5,7 +5,7 @@ const SocialNav = styled.nav`
   position: fixed;
   top: 50%;
   transform: translate3d(0, -50%, 0);
-  font-size: clamp(2rem, 2vw + 1rem, 4rem);
+  font-size: clamp(1rem, 2vw + 1rem, 4rem);
 
   & li {
     list-style: none;
