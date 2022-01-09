@@ -54,6 +54,11 @@ export default createGlobalStyle<{ theme: Theme }>`
     text-decoration: none;
   }
 
+img, picture {
+  max-width: 100%;
+}
+
+
   code {
     font-family: JetBrain Mono;
   }
