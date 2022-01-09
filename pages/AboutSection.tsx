@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styled from "styled-components";
 import Header from "../components/Header";
-import me from "../public/IMG_0186.jpg";
+import me from "./../public/IMG_0186.jpg";
 
 const AboutStyle = styled.section`
   min-height: 100vh;
