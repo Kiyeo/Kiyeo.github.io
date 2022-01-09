@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const SocialNav = styled.nav`
   position: fixed;
-  bottom: 5vh;
+  bottom: 5%;
   left: 50%;
   transform: translate3d(-50%, 0, 0);
   z-index: 2;
@@ -32,9 +32,9 @@ const SocialNav = styled.nav`
     transition: none;
   }
 
-  @media screen and (min-width: 40rem) {
+  @media screen and (min-width: 45rem) {
     top: 50%;
-    right: 2.5vw;
+    right: 2.5%;
     bottom: unset;
     left: unset;
     transform: translate3d(0, -50%, 0);

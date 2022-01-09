@@ -3,12 +3,13 @@ import Header from "../components/Header";
 
 const AboutStyle = styled.section`
   min-height: 100vh;
-  padding: 5vh 10vw 5vh 10vw;
+  padding: 5% 10% 5% 10%;
 `;
 
 const ContentDiv = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  justify-content: center;
   align-items: center;
   grid-gap: 2em;
 `;
