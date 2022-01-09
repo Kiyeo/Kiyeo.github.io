@@ -1,11 +1,15 @@
 import styled from "styled-components";
 
 const SocialNav = styled.nav`
-  right: 2.5vw;
   position: fixed;
-  top: 50%;
-  transform: translate3d(0, -50%, 0);
-  font-size: clamp(1rem, 2vw + 1rem, 4rem);
+  bottom: 5vh;
+  left: 50%;
+  transform: translate3d(-50%, 0, 0);
+  z-index: 2;
+
+  & ul {
+    columns: 3;
+  }
 
   & li {
     list-style: none;
@@ -27,14 +31,22 @@ const SocialNav = styled.nav`
     fill: ${(p) => p.theme.hoverAccent};
     transition: none;
   }
+
+  @media screen and (min-width: 40rem) {
+    top: 50%;
+    right: 2.5vw;
+    bottom: unset;
+    left: unset;
+    transform: translate3d(0, -50%, 0);
+    font-size: clamp(1rem, 2vw + 1rem, 4rem);
+
+    & ul {
+      columns: 0;
+    }
+  }
 `;
 
 const NavBar: React.FC = () => {
-  const iconSize = {
-    height: 24,
-    width: 24,
-  };
-
   const urlHandles = {
     github: "https://github.com/kiyeo",
     linkedin: "https://linkedin.com/in/leokeo",
