@@ -12,14 +12,14 @@
     "deploy": "rm -rf node_modules/.cache && rimraf out && next build && next export && touch out/.nojekyll && gh-pages -d out -t true"
   },
   "dependencies": {
-    "@babel/core": "^7.0.0-0",
+    "@babel/core": "^7.17.5",
     "next": "12.0.7",
     "next-compose-plugins": "^2.2.1",
     "next-fonts": "^1.5.1",
     "next-optimized-images": "^2.6.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-is": "^16.8",
+    "react-is": "^17.0",
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
@@ -28,7 +28,7 @@
     "@types/styled-components": "^5.1.18",
     "babel-plugin-styled-components": "^2.0.2",
     "eslint": "8.9.0",
-    "eslint-config-next": "12.0.7",
+    "eslint-config-next": "12.1.0",
     "gh-pages": "^3.2.3",
     "typescript": "4.5.4"
   }
