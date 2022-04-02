@@ -27,17 +27,28 @@ jobs:
           cache: "yarn"
       - name: Install dependencies
         run: |
-          echo "Installing dependencies..."
           rm -rf node_modules && yarn install
       - name: Run linting test
         run: |
-          echo "Running linting test..."
           yarn lint
 
   deploy:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
     needs: [testing]
+
     steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "yarn"
       - name: Build
         run: |
           yarn run build
