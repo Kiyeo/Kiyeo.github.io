@@ -6,9 +6,11 @@ name: Node.js CI/CD
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: "*"
 
 jobs:
-  build:
+  testing:
     runs-on: ubuntu-latest
 
     strategy:
@@ -24,11 +26,32 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "yarn"
       - name: Install dependencies
-        run: rm -rf node_modules && yarn install
-      - run: yarn run build
-      - run: yarn run export
-      - run: touch ./out/.nojekyll
+        run: |
+          rm -rf node_modules && yarn install
+      - name: Run linting test
+        run: |
+          yarn lint
 
+  deploy:
+    if: ${{ github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    needs: [testing]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "yarn"
+      - name: Install dependencies
+        run: |
+          rm -rf node_modules && yarn install
+      - name: Build
+        run: |
+          yarn run build
+          yarn run export
+          touch ./out/.nojekyll
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.2.0
         with:
