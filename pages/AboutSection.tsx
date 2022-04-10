@@ -1,4 +1,3 @@
-import Image from "next/image";
 import styled from "styled-components";
 import Header from "../components/Header";
 
@@ -25,7 +24,7 @@ const AboutSection: React.FC = () => {
       <Header>About</Header>
       <ContentDiv>
         <p>Just a developer trying to figure out how things work.</p>
-        <Image alt="me" src={"/assets/images/IMG_0186.jpg"} width="100%" height="100%" layout="responsive" objectFit="contain" />
+        <img alt="me" src={"/assets/images/IMG_0186.jpg"} />
       </ContentDiv>
     </AboutStyle>
   );
