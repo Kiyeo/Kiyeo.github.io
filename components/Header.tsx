@@ -1,6 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
+interface Props {
+  children: React.ReactNode
+}
+
 const HeaderStyle = styled.h1`
   position: relative;
   width: max-content;
@@ -20,7 +24,7 @@ const HeaderStyle = styled.h1`
   }
 `;
 
-const Header: React.FC = ({ children }) => {
+const Header: React.FC<Props> = ({ children }) => {
   return <HeaderStyle>{children}</HeaderStyle>;
 };
 
