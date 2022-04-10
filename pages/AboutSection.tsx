@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styled from "styled-components";
 import Header from "../components/Header";
 
@@ -14,6 +15,8 @@ const ContentDiv = styled.div`
   grid-gap: 2em;
   font-size: clamp(1rem, 2vw + 1rem, 4rem);
   text-align: center;
+
+
 `;
 
 const AboutSection: React.FC = () => {
@@ -22,7 +25,7 @@ const AboutSection: React.FC = () => {
       <Header>About</Header>
       <ContentDiv>
         <p>Just a developer trying to figure out how things work.</p>
-        <img src="/assets/images/IMG_0186.jpg" />
+        <Image alt="me" src={"/assets/images/IMG_0186.jpg"} width="100%" height="100%" layout="responsive" objectFit="contain" />
       </ContentDiv>
     </AboutStyle>
   );
