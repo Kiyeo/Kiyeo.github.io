@@ -73,20 +73,21 @@ jobs:
         id: export-cache-dir-path
         run: echo "::set-output name=dir::$(pwd)/out"
       - uses: actions/cache@v3
-        id: export-cache # use this to check for `cache-hit` (`build.steps.export-cache.outputs.cache-hit != 'true'`)
+        id: export-cache # use this to check for `cache-hit` (`steps.export-cache.outputs.cache-hit != 'true'`)
         with:
           path: ./out/
           key: ${{ runner.os }}-build-${{ steps.export-cache-dir-path.outputs.dir }}-${{ hashFiles('**/out/**') }}
           restore-keys: ${{ runner.os }}-build-${{ steps.export-cache-dir-path.outputs.dir }}-${{ hashFiles('**/out/**') }}
 
       - name: Build
+        if: steps.export-cache.outputs.cache-hit != 'true'
         run: |
           yarn run build
           yarn run export
           touch ./out/.nojekyll
 
   deploy:
-    #if: ${{ github.ref == 'refs/heads/main' }}
+    if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
     needs: [build]
 
@@ -97,7 +98,7 @@ jobs:
         id: export-cache-dir-path
         run: echo "::set-output name=dir::$(pwd)/out"
       - uses: actions/cache@v3
-        id: export-cache # use this to check for `cache-hit` (`build.steps.export-cache.outputs.cache-hit != 'true'`)
+        id: export-cache # use this to check for `cache-hit` (`steps.export-cache.outputs.cache-hit != 'true'`)
         with:
           path: ./out/
           key: ${{ runner.os }}-build-${{ steps.export-cache-dir-path.outputs.dir }}-${{ hashFiles('**/out/**') }}
