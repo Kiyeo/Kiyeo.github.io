@@ -76,8 +76,8 @@ jobs:
         id: export-cache # use this to check for `cache-hit` (`build.steps.export-cache.outputs.cache-hit != 'true'`)
         with:
           path: ./out/
-          key: ${{ runner.os }}-build-${{ steps.export-cache-dir-path.outputs.dir }}-${{ hashFiles('./out') }}
-          restore-keys: ${{ runner.os }}-build-${{ steps.export-cache-dir-path.outputs.dir }}-${{ hashFiles('./out') }}
+          key: ${{ runner.os }}-build-${{ steps.export-cache-dir-path.outputs.dir }}-${{ hashFiles('**/out/**') }}
+          restore-keys: ${{ runner.os }}-build-${{ steps.export-cache-dir-path.outputs.dir }}-${{ hashFiles('**/out/**') }}
 
       - name: Build
         run: |
@@ -105,8 +105,8 @@ jobs:
         id: export-cache # use this to check for `cache-hit` (`build.steps.export-cache.outputs.cache-hit != 'true'`)
         with:
           path: ./out/
-          key: ${{ runner.os }}-build-${{ steps.export-cache-dir-path.outputs.dir }}-${{ hashFiles('./out') }}
-          restore-keys: ${{ runner.os }}-build-${{ steps.export-cache-dir-path.outputs.dir }}-${{ hashFiles('./out') }}
+          key: ${{ runner.os }}-build-${{ steps.export-cache-dir-path.outputs.dir }}-${{ hashFiles('**/out/**') }}
+          restore-keys: ${{ runner.os }}-build-${{ steps.export-cache-dir-path.outputs.dir }}-${{ hashFiles('**/out/**') }}
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.2.0
