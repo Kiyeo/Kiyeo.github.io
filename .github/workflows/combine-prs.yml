@@ -73,8 +73,14 @@ jobs:
                 }
                 console.log('Checking mergeability: ' + branch);
                 if('${{ github.event.inputs.mustBeMergeable }}') {
-                  const isMergeable = pull['mergeable']
-                  const mergeableState = pull['mergeable_state']
+                  const pullNumber = pull['number']
+                  const branchPullRequest = await github.paginate('GET /repos/{owner}/{repo}/pull/{pull_number}', {
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    pull_number: pullNumber
+                  });
+                  const isMergeable = branchPullRequest['mergeable']
+                  const mergeableState = branchPullRequest['mergeable_state']
                   if (!(isMergeable && mergeableState === 'clean')) {
                     statusOK = false;
                   }
