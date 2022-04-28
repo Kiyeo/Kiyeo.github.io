@@ -13,6 +13,10 @@ on:
       mustBeGreen:
         description: "Only combine PRs that are green (status is success)"
         required: true
+        default: false
+      mustBeMergeable:
+        description: "Only combine PRs that pass all checks and with state clean"
+        required: true
         default: true
       combineBranchName:
         description: "Name of the branch to combine PRs into"
@@ -66,6 +70,15 @@ jobs:
                       statusOK = false;
                     }
                   }
+                }
+                console.log('Checking mergeability: ' + branch);
+                if('${{ github.event.inputs.mustBeMergeable }}') {
+                  const isMergeable = pull['mergeable']
+                  const mergeableState = pull['mergeable_state']
+                  if (!(isMergeable && mergeableState === 'clean')) {
+                    statusOK = false;
+                  }
+                  console.log('Mergeable is ' + isMergeable + ' with mergeable state ' + mergeable_state);
                 }
                 console.log('Checking labels: ' + branch);
                 const labels = pull['labels'];
