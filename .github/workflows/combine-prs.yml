@@ -78,7 +78,7 @@ jobs:
                   if (!(isMergeable && mergeableState === 'clean')) {
                     statusOK = false;
                   }
-                  console.log('Mergeable is ' + isMergeable + ' with mergeable state ' + mergeable_state);
+                  console.log('Mergeable is ' + isMergeable + ' with mergeable state ' + mergeableState);
                 }
                 console.log('Checking labels: ' + branch);
                 const labels = pull['labels'];
