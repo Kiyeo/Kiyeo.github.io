@@ -51,7 +51,7 @@ jobs:
               if (branch.startsWith('${{ github.event.inputs.branchPrefix }}')) {
                 console.log('Branch matched: ' + branch);
                 statusOK = true;
-                if(${{ github.event.inputs.mustBeGreen }}) {
+                if('${{ github.event.inputs.mustBeGreen }}') {
                   console.log('Checking green status: ' + branch);
                   const statuses = await github.paginate('GET /repos/{owner}/{repo}/commits/{ref}/status', {
                     owner: context.repo.owner,
