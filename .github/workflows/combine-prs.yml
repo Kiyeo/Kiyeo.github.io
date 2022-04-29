@@ -1,9 +1,8 @@
 name: "Combine PRs"
 
-# Runs every midnight
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 0 * * *" # Runs every midnight
   workflow_dispatch:
     inputs:
       branchPrefix:
