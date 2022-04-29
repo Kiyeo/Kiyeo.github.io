@@ -1,9 +1,8 @@
 name: "Combine PRs"
 
-# Runs every midnight
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 0 * * *" # Runs every midnight
   workflow_dispatch:
     inputs:
       branchPrefix:
@@ -13,6 +12,12 @@ on:
       mustBeGreen:
         description: "Only combine PRs that are green (status is success)"
         required: true
+        type: boolean
+        default: false
+      mustBeMergeable:
+        description: "Only combine PRs that pass all checks and with state clean"
+        required: true
+        type: boolean
         default: true
       combineBranchName:
         description: "Name of the branch to combine PRs into"
@@ -66,6 +71,21 @@ jobs:
                       statusOK = false;
                     }
                   }
+                }
+                if(${{ github.event.inputs.mustBeMergeable }}) {
+                  const pullNumber = pull['number'];
+                  const branchPullRequest = await github.request('GET /repos/{owner}/{repo}/pulls/{pull_number}', {
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    pull_number: pullNumber
+                  });
+                  console.log('Checking mergeability: ' + branchPullRequest['url']);
+                  const isMergeable = branchPullRequest['data']['mergeable']
+                  const mergeableState = branchPullRequest['data']['mergeable_state']
+                  if (!(isMergeable && mergeableState === 'clean')) {
+                    statusOK = false;
+                  }
+                  console.log('Mergeable is ' + isMergeable + ' with mergeable state ' + mergeableState);
                 }
                 console.log('Checking labels: ' + branch);
                 const labels = pull['labels'];
