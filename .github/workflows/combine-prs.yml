@@ -58,7 +58,8 @@ jobs:
                     repo: context.repo.repo,
                     pull_number: pullNumber
                   });
-                  console.log('Checking mergeability: ' + branchPullRequest['url']);
+                  console.log('Checking mergeability: ' + branchPullRequest['html_url']);
+                  console.log('Mergeability API Link: ' + branchPullRequest['url']);
                   const isMergeable = branchPullRequest['data']['mergeable']
                   const mergeableState = branchPullRequest['data']['mergeable_state']
                   if (!(isMergeable && mergeableState === 'clean')) {
