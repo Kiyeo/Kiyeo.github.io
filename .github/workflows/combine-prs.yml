@@ -40,7 +40,7 @@ jobs:
           USER_INPUT_MUST_BE_MERGEABLE=${{ github.event.inputs.mustBeMergeable }}
           echo "MUST_BE_MERGEABLE=${USER_INPUT_MUST_BE_MERGEABLE:-true}" >> $GITHUB_ENV
           USER_INPUT_COMBINE_BRANCH_NAME=${{ github.event.inputs.combineBranchName }}
-          echo "COMBINE_BRANCH_NAME=${USER_INPUT_COMBINE_BRANCH_NAME:-'combine-prs-branch'}" >> $GITHUB_ENV
+          echo "COMBINE_BRANCH=${USER_INPUT_COMBINE_BRANCH_NAME:-'combine-prs-branch'}" >> $GITHUB_ENV
           USER_INPUT_IGNORE_LABEL=${{ github.event.inputs.ignoreLabel }}
           echo "IGNORE_LABEL=${USER_INPUT_IGNORE_LABEL:-'nocombine'}" >> $GITHUB_ENV
       - uses: actions/github-script@v3
@@ -117,7 +117,7 @@ jobs:
         env:
           BASE_BRANCH: ${{ steps.fetch-branch-names.outputs.base-branch }}
           BRANCHES_TO_COMBINE: ${{ steps.fetch-branch-names.outputs.result }}
-          COMBINE_BRANCH_NAME: ${{ env.COMBINE_BRANCH_NAME }}
+          COMBINE_BRANCH_NAME: ${{ env.COMBINE_BRANCH }}
         run: |
           echo "$BRANCHES_TO_COMBINE"
           sourcebranches="${BRANCHES_TO_COMBINE%\"}"
