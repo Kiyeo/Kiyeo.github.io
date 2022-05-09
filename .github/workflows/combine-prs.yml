@@ -42,6 +42,7 @@ jobs:
           USER_INPUT_COMBINE_BRANCH_NAME='${{ github.event.inputs.combineBranchName }}'
           echo "COMBINE_BRANCH=${USER_INPUT_COMBINE_BRANCH_NAME:-'combine-prs-branch'}" >> $GITHUB_ENV
           USER_INPUT_IGNORE_LABEL='${{ github.event.inputs.ignoreLabel }}'
+
           echo "IGNORE_LABEL=${USER_INPUT_IGNORE_LABEL:-'nocombine'}" >> $GITHUB_ENV
       - uses: actions/github-script@v3
         id: fetch-branch-names
