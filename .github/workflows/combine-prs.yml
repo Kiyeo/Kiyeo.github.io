@@ -33,15 +33,16 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - run: |
-          USER_INPUT_BRANCH_PREFIX=${{ github.event.inputs.branchPrefix }}
+          USER_INPUT_BRANCH_PREFIX='${{ github.event.inputs.branchPrefix }}'
           # Use user input or fall back to "dependabot"
           echo "BRANCH_PREFIX=${USER_INPUT_BRANCH_PREFIX:-'dependabot'}" >> $GITHUB_ENV
           # use ${{ env.BRANCH_PREFIX }} in your action, value will be always provided
           USER_INPUT_MUST_BE_MERGEABLE=${{ github.event.inputs.mustBeMergeable }}
           echo "MUST_BE_MERGEABLE=${USER_INPUT_MUST_BE_MERGEABLE:-true}" >> $GITHUB_ENV
-          USER_INPUT_COMBINE_BRANCH_NAME=${{ github.event.inputs.combineBranchName }}
-          echo "COMBINE_BRANCH_NAME=${USER_INPUT_COMBINE_BRANCH_NAME:-'combine-prs-branch'}" >> $GITHUB_ENV
-          USER_INPUT_IGNORE_LABEL=${{ github.event.inputs.ignoreLabel }}
+          USER_INPUT_COMBINE_BRANCH_NAME='${{ github.event.inputs.combineBranchName }}'
+          echo "COMBINE_BRANCH=${USER_INPUT_COMBINE_BRANCH_NAME:-'combine-prs-branch'}" >> $GITHUB_ENV
+          USER_INPUT_IGNORE_LABEL='${{ github.event.inputs.ignoreLabel }}'
+
           echo "IGNORE_LABEL=${USER_INPUT_IGNORE_LABEL:-'nocombine'}" >> $GITHUB_ENV
       - uses: actions/github-script@v3
         id: fetch-branch-names
@@ -59,7 +60,7 @@ jobs:
             for (const pull of pulls) {
               const branch = pull['head']['ref'];
               console.log('Pull for branch: ' + branch);
-              if (branch.startsWith(${{ env.BRANCH_PREFIX }})) {
+              if (branch.startsWith('${{ env.BRANCH_PREFIX }}')) {
                 console.log('Branch matched: ' + branch);
                 statusOK = true;
                 if(${{ env.MUST_BE_MERGEABLE }}) {
@@ -117,7 +118,7 @@ jobs:
         env:
           BASE_BRANCH: ${{ steps.fetch-branch-names.outputs.base-branch }}
           BRANCHES_TO_COMBINE: ${{ steps.fetch-branch-names.outputs.result }}
-          COMBINE_BRANCH_NAME: ${{ env.COMBINE_BRANCH_NAME }}
+          COMBINE_BRANCH_NAME: ${{ env.COMBINE_BRANCH }}
         run: |
           echo "$BRANCHES_TO_COMBINE"
           sourcebranches="${BRANCHES_TO_COMBINE%\"}"
