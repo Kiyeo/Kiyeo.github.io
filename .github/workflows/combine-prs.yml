@@ -35,15 +35,14 @@ jobs:
       - run: |
           USER_INPUT_BRANCH_PREFIX='${{ github.event.inputs.branchPrefix }}'
           # Use user input or fall back to "dependabot"
-          echo "BRANCH_PREFIX=${USER_INPUT_BRANCH_PREFIX:-'dependabot'}" >> $GITHUB_ENV
+          echo "BRANCH_PREFIX=${USER_INPUT_BRANCH_PREFIX:-dependabot}" >> $GITHUB_ENV
           # use ${{ env.BRANCH_PREFIX }} in your action, value will be always provided
           USER_INPUT_MUST_BE_MERGEABLE=${{ github.event.inputs.mustBeMergeable }}
           echo "MUST_BE_MERGEABLE=${USER_INPUT_MUST_BE_MERGEABLE:-true}" >> $GITHUB_ENV
           USER_INPUT_COMBINE_BRANCH_NAME='${{ github.event.inputs.combineBranchName }}'
-          echo "COMBINE_BRANCH=${USER_INPUT_COMBINE_BRANCH_NAME:-'combine-prs-branch'}" >> $GITHUB_ENV
+          echo "COMBINE_BRANCH=${USER_INPUT_COMBINE_BRANCH_NAME:-combine-prs-branch}" >> $GITHUB_ENV
           USER_INPUT_IGNORE_LABEL='${{ github.event.inputs.ignoreLabel }}'
-
-          echo "IGNORE_LABEL=${USER_INPUT_IGNORE_LABEL:-'nocombine'}" >> $GITHUB_ENV
+          echo "IGNORE_LABEL=${USER_INPUT_IGNORE_LABEL:-nocombine}" >> $GITHUB_ENV
       - uses: actions/github-script@v3
         id: fetch-branch-names
         name: Fetch branch names
